@@ -44,7 +44,9 @@ function E = getOneClsEntropy(set)
 % w.r.t. all base clusterings.
 E = 0;
 count = sum(set); 
-
+if size(set,1) == 1
+    return 
+end
 
 count = count./size(set,1);
 E = E-sum(count.*log2(count));
